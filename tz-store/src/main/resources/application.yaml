@@ -1,0 +1,91 @@
+spring:
+    mvc:
+      throw-exception-if-no-handler-found: true
+    resources:
+      add-mappings: false
+    servlet:
+      multipart:
+        enabled: true
+        max-file-size:
+          200MB
+    freemarker:
+      template-loader-path:
+        - classpath:/mailtemplates
+      suffix: .ftl
+    
+    mail:
+      host: smtp.gmail.com
+      port: 587
+      username: yourtzstore
+      password: thisisthewizardofmusic
+      properties:
+        mail:
+          smtp:
+            starttls:
+              enable: true
+              required: true
+            auth: true
+            connectiontimeout: 5000
+            timeout: 5000
+            writetimeout: 5000
+            
+    datasource:
+        url: jdbc:postgresql://localhost:5432/apartment-rental
+        username: postgres
+        password: admin
+
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: create-drop
+            
+    security:
+      oauth2:
+        client:
+          registration:
+            google:
+              clientId: 426463794068-fouh51336jp76tdkshvj5nj7vp5dgb2t.apps.googleusercontent.com
+              clientSecret: d2hjhki274KVdArWPZz6yshW
+              scope:
+                - email
+                - profile
+            facebook:
+              clientId: 589259105144040
+              clientSecret: 3bd640c55529e7d86a9bb834d20fbb9d
+              scope:
+                - email
+                - public_profile
+            github:
+              clientId: d3e47fc2ddd966fa4352
+              clientSecret: 3bc0f6b8332f93076354c2a5bada2f5a05aea60d
+              scope:
+                - user:email
+                - read:user
+          provider:
+            facebook:
+              authorizationUri: https://www.facebook.com/v3.0/dialog/oauth
+              tokenUri: https://graph.facebook.com/v3.0/oauth/access_token
+              userInfoUri: https://graph.facebook.com/v3.0/me?fields=id,first_name,middle_name,last_name,name,email,verified,is_verified,picture.width(250).height(250)
+
+
+app:
+  auth:
+    tokenSecret: 926D96C90030DD58429D2751AC1BDBBC
+    tokenExpirationMsec: 864000000
+  oauth2:
+    # After successfully authenticating with the OAuth2 Provider,
+    # we'll be generating an auth token for the user and sending the token to the
+    # redirectUri mentioned by the client in the /oauth2/authorize request.
+    # We're not using cookies because they won't work well in mobile clients.
+    authorizedRedirectUris:
+      - http://localhost:3000/oauth2/redirect
+      
+jwt:
+  http:
+    request:
+      header: Authorization
+      
+file:
+  upload-dir: /Volumes/HDD-2/tz-store-ui/public/images/avatars/
+  
+ 
