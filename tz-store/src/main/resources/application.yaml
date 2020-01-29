@@ -44,20 +44,20 @@ spring:
         client:
           registration:
             google:
-              clientId: 426463794068-fouh51336jp76tdkshvj5nj7vp5dgb2t.apps.googleusercontent.com
-              clientSecret: d2hjhki274KVdArWPZz6yshW
+              clientId: ****
+              clientSecret: ****
               scope:
                 - email
                 - profile
             facebook:
-              clientId: 589259105144040
-              clientSecret: 3bd640c55529e7d86a9bb834d20fbb9d
+              clientId: ******
+              clientSecret: ******
               scope:
                 - email
                 - public_profile
             github:
-              clientId: d3e47fc2ddd966fa4352
-              clientSecret: 3bc0f6b8332f93076354c2a5bada2f5a05aea60d
+              clientId: *****
+              clientSecret: *****
               scope:
                 - user:email
                 - read:user
