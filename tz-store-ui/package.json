@@ -10,7 +10,7 @@
     "clsx": "^1.0.4",
     "downshift": "^3.4.5",
     "history": "^4.10.1",
-    "immer": "^5.0.0",
+    "immer": "^8.0.1",
     "moment": "^2.24.0",
     "node-google-timezone": "^0.1.1",
     "node-sass": "^4.13.0",
